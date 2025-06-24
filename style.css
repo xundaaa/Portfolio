@@ -1,0 +1,68 @@
+body, html {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+    overflow: hidden;
+}
+
+.Header h1{
+    text-align: center;
+}
+.Header h1, .Header p , .Header a{
+    opacity: 0; 
+    transform: translateY(25px); 
+    animation: fadeInUp 1.5s ease-out forwards;
+}
+
+.Header p {
+    animation-delay: 1s;
+}
+
+@keyframes fadeInUp {
+    0% {
+        opacity: 0;
+        transform: translateY(25px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.Images {
+    border-radius: 15px;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 15px;
+    padding: 20px;
+    opacity: 0;
+    animation: fadeInImages 2s ease-out forwards;
+}
+
+.Images img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    transform: scale(0.9);
+    transition: transform 0.3s ease-in-out;
+}
+
+.Images img:hover {
+    transform: scale(1.05);
+}
+
+@keyframes fadeInImages {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+
+body.loaded .Header h1, body.loaded .Header p, body.loaded .Image, .Header a {
+    opacity: 1;
+    animation: fadeInUp 2s ease-out forwards;
+}
+
